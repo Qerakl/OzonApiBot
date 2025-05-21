@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 # Установка зависимостей Python
 WORKDIR /app
 
-COPY ./bot /app
+COPY . /app
 
 RUN pip install --upgrade pip
 
@@ -20,4 +20,4 @@ RUN pip install pandas scikit-learn numpy fastapi uvicorn pydantic
 EXPOSE 8000
 
 # Команда запуска FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "test_bot:app", "--host", "0.0.0.0", "--port", "8000"]
